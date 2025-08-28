@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie Love</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <!-- Navbar  -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#">Filmes <span>Hans</span></a>
+
+      <nav class="menu">
+        <a href="#">Home</a>
+        <a class="active" href="filmes.html">Filmes</a>
+        <a href="a]">Series</a>
+        <a href="animes.html">Animes</a>
+      </nav>
+
+      <div class="actions">
+        <input class="search" type="search" placeholder="Procurar filmes, séries..." />
+        <a class="btn btn-sm" href="login.html">Entrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <picture>
+        <img src="images/83793c73b2c87a25c667687d81bfbf73.jpg" alt="Banner do destaque">
+      </picture>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="badge">Filme em Destaque</div>
+        <h1 class="hero-title">Raya e o<br> Ultimo Dragao</h1>
+        <p class="hero-meta">Animação • Aventura • 1h 47m • 2021</p>
+        <div class="hero-stars" aria-label="Avaliação">★★★★☆</div>
+
+        <div class="hero-cta">
+          <a class="btn" href="#">▶ Play</a>
+          <a class="btn btn-ghost" href="#">ℹ Detalhes</a>
+        </div>
+
+        <div class="thumbs">
+          <img src="images/049727f0693b49923febb4b99745fa04.jpg" alt="Cena 1">
+          <img src="images/125ddfcfa7a3c43dbc7be444e22d9cc2.jpg" alt="Cena 2">
+          <img src="images/149264da7100f7e43fd056f055dc5813.jpg" alt="Cena 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="container filters">
+      <button class="chip active">All</button>
+      <button class="chip">Accao</button>
+      <button class="chip">Comedia</button>
+      <button class="chip">ciencia </button>
+      <button class="chip">Aventura</button>
+      
+    </section>
+
+    <!-- CARROSSEL: Most Viewed -->
+    <section class="container block">
+      <div class="block-head">
+        <h2>Mais  Vistod</h2>
+        <a class="see-all" href="#">Ver tudo →</a>
+      </div>
+
+      <div class="rail" role="list">
+        <!-- Card -->
+        <article class="card" role="listitem">
+          <img src="images/2f113dee78b18aa82d2e2fa1d36fb6b6.jpg" alt="Poster 1">
+          <div class="card-meta">
+            <h3>YOU</h3>
+            <p>2 Temporada</p>
+          </div>
+        </article>
+
+        <article class="card"><img src="images/37d38a90d45f8379de57252b798bc02e.jpg" alt="Poster 2"><div class="card-meta">
+          <h3>Naruto</h3>
+          <p>Temporada 4</p>
+        </div></article>
+        <article class="card"><img src="images/45bf0b53a535c80e1825623e400938ad.jpg" alt="Poster 3">
+          <div class="card-meta">
+            <h3>La casa de papel</h3>
+            <p>crime</p></div></article>
+        <article class="card"><img src="images/56e3bd29c2ca846af718fbd512512ead.jpg" alt="Poster 4"><div class="card-meta">
+          <h3>jujutsu kaisen</h3><p>Terror • 2018</p></div></article>
+        <article class="card"><img src="images/57c163f8d59c55a36115021b192d18f5.jpg" alt="Poster 5"><div class="card-meta">
+          <h3>black clover </h3><p>Ação • 2023</p></div></article>
+        <article class="card"><img src="images/6d2db6c8ad3bebffabd48f820de0024d.jpg" alt="Poster 6"><div class="card-meta">
+          <h3>peaky blinder</h3><p>crime • 2020</p></div></article>
+        <article class="card"><img src="images/6f6ab3bee0b50ed30152f3a53b1363f5.jpg" alt="Poster 7"><div class="card-meta">
+          <h3>tokyo revengers</h3><p>Fantasia</p></div></article>
+      </div>
+    </section>
+
+    <!-- FEATURE: Black Adam -->
+    <section class="feature">
+      <img class="feature-bg" src="images/20f9d842cf261d15725316d44dda1629.jpg" alt="Black Adam banner">
+      <div class="feature-overlay"></div>
+
+      <div class="container feature-content">
+        <h2 class="feature-title">Black Adam</h2>
+        <p class="feature-meta">Ação • 2h 05m • 2022</p>
+        <p class="feature-desc">
+          “Depois de quase cinco mil anos de prisão, Black Adam é libertado e pronto para fazer justiça ao seu modo.”
+        </p>
+        <div class="feature-cta">
+          <a class="btn" href="#">▶ Play</a>
+          <a class="btn btn-ghost" href="#">Adicionar à lista</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID: Most Popular -->
+    <section class="container block">
+      <div class="block-head"><h2>Most Popular</h2></div>
+
+      <div class="grid">
+        <!-- 8 cards -->
+        <article class="card"><img src="images/9d121f19ecb73a77dd534fac7f14dfa5.jpg" alt=""><div class="card-meta"><h3>vigadores </h3><p>Filme • 2023</p></div></article>
+        <article class="card"><img src="images/b968f3f43313dedab23ac3104b6a05ea.jpg" alt=""><div class="card-meta"><h3>supernatural</h3><p>2022</p></div></article>
+        <article class="card"><img src="images/f46a5d29d0184837e05d61a34970a1f0.jpg" alt=""><div class="card-meta"><h3>doutor estranho </h3><p>2023</p></div></article>
+        <article class="card"><img src="images/c2de1bd0466ed00e91dbce3441ec2ec6.jpg" alt=""><div class="card-meta"><h3>Hulk</h3><p>Ação</p></div></article>
+       
+        <article class="card"><img src="images/4c322b1dfe6b42185cb3c8f62d8772e7.jpg" alt=""><div class="card-meta"><h3>kaiju nr 8</h3><p>Ação</p></div></article>
+        <article class="card"><img src="images/94c98f57dc807f646d7c0ab277f30207.jpg" alt=""><div class="card-meta"><h3>Avatar</h3><p>Fantasia</p></div></article>
+      </div>
+    </section>
+
+    <!-- FEATURE + rail: Popular TV Series -->
+    <section class="feature feature-dark">
+      <img class="feature-bg" src="images/57c163f8d59c55a36115021b192d18f5.jpg" alt=">
+      <div class="feature-overlay gradient"></div>
+
+      <div class="container feature-content">
+        <h2 class="feature-title">black clover • Season 9</h2>
+        <p class="feature-desc">Última temporada do melhor d.</p>
+        <a class="btn" href="#">▶ Play</a>
+      </div>
+    </section>
+
+    <section class="container block">
+      <div class="block-head"><h2> filme e series Populares </h2></div>
+      <div class="rail">
+        <article class="card"><img src="images/45bf0b53a535c80e1825623e400938ad.jpg" alt=""><div class="card-meta"><h3>la casa de pael</h3><p>4 Temp.</p></div></article>
+        <article class="card"><img src="images/519dfc7f6154a5fea3854f1fc4bbbe0e.jpg" alt=""><div class="card-meta"><h3>black adam</h3><p>3 Temp.</p></div></article>
+        <article class="card"><img src="images/45bf0b53a535c80e1825623e400938ad.jpg" alt=""><div class="card-meta"><h3>la casa de papel corea </h3><p>2022</p></div></article>
+        <article class="card"><img src="images/c2de1bd0466ed00e91dbce3441ec2ec6.jpg" alt=""><div class="card-meta"><h3>hulk</h3><p></p></div></article>
+        <article class="card"><img src="images/f46a5d29d0184837e05d61a34970a1f0.jpg" alt=""><div class="card-meta"><h3>doutor estranho </h3><p>Mini-série</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#">Filme <span>Hans</span></a>
+        <p class="muted">Assiste aos teus filmes e séries favoritos em alta qualidade.</p>
+        <div class="socials">
+          <a aria-label="facebook" href="#">f</a>
+          <a aria-label="twitter" href="#">x</a>
+          <a aria-label="instagram" href="#">i</a>
+          <a aria-label="youtube" href="#">y</a>
+        </div>
+      </div>
+
+      <nav>
+        <h4>Movie</h4>
+        <a href="#">AcCAO</a>
+        <a href="#">Comeda</a>
+        <a href="#">Horror</a>
+        <a href="#">Animacao</a>
+      </nav>
+
+      <nav>
+        <h4>Series</h4>
+     
+        <a href="#">Reality Shows</a>
+        <a href="#">Comedia</a>
+        <a href="#">Drama</a>
+      </nav>
+
+      <nav>
+        <h4>Suporte</h4>
+        <a href="#">Centro de ajuda</a>
+        <a href="#">Termos</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </div>
+
+    <div class="container footnote">
+      <small>© <span id="year"></span> Filmes Hans. Todos os direitos reservados.</small>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

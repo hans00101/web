@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Científica</title>
+  <style>
+    body {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .calculadora {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    #tela {
+      width: 230px;
+      height: 60px;
+      border: none;
+      border-radius: 10px;
+      text-align: right;
+      font-size: 36px;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: transparent;
+      color: #fff;
+      outline: none;
+    }
+
+    .linha {
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      width: 55px;
+      height: 55px;
+      margin: 5px;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      color: #fff;
+      background-color: #222;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    button:active {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculadora">
+    <div id="tela">0</div>
+
+    <div class="linha">
+      <button onclick="limpar()">C</button>
+      <button onclick="trocarSinal()">±</button>
+      <button onclick="apagarUltimo()">⌫</button>
+      <button onclick="definirOperacao('/')">÷</button>
+    </div>
+
+    <div class="linha">
+      <button onclick="adicionarNumero(7)">7</button>
+      <button onclick="adicionarNumero(8)">8</button>
+      <button onclick="adicionarNumero(9)">9</button>
+      <button onclick="definirOperacao('*')">×</button>
+    </div>
+
+    <div class="linha">
+      <button onclick="adicionarNumero(4)">4</button>
+      <button onclick="adicionarNumero(5)">5</button>
+      <button onclick="adicionarNumero(6)">6</button>
+      <button onclick="definirOperacao('-')">−</button>
+    </div>
+
+    <div class="linha">
+      <button onclick="adicionarNumero(1)">1</button>
+      <button onclick="adicionarNumero(2)">2</button>
+      <button onclick="adicionarNumero(3)">3</button>
+      <button onclick="definirOperacao('+')">+</button>
+    </div>
+
+    <div class="linha">
+      <button onclick="adicionarNumero(0)">0</button>
+      <button onclick="adicionarPonto()">.</button>
+      <button onclick="calcular()">=</button>
+      <button onclick="porcentagem()">%</button>
+    </div>
+
+    <div class="linha">
+      <button onclick="raizQuadrada()">√</button>
+      <button onclick="potencia()">x²</button>
+      <button onclick="fatorial()">n!</button>
+    </div>
+  </div>
+
+  <script>
+    const tela = document.getElementById("tela");
+    let valorAtual = "";
+    let valorAnterior = "";
+    let operacao = null;
+
+    function atualizarTela() {
+      tela.textContent = valorAtual || "0";
+    }
+
+    function adicionarNumero(num) {
+      valorAtual += num;
+      atualizarTela();
+    }
+
+    function adicionarPonto() {
+      if (!valorAtual.includes(".")) {
+        valorAtual += ".";
+        atualizarTela();
+      }
+    }
+
+    function definirOperacao(op) {
+      if (valorAtual === "") return;
+      if (valorAnterior !== "") calcular();
+      operacao = op;
+      valorAnterior = valorAtual;
+      valorAtual = "";
+    }
+
+    function calcular() {
+      let resultado;
+      const num1 = parseFloat(valorAnterior);
+      const num2 = parseFloat(valorAtual);
+      if (isNaN(num1) || isNaN(num2)) return;
+
+      switch (operacao) {
+        case '+': resultado = num1 + num2; break;
+        case '-': resultado = num1 - num2; break;
+        case '*': resultado = num1 * num2; break;
+        case '/':
+          if (num2 === 0) {
+            tela.textContent = "Erro";
+            valorAtual = "";
+            valorAnterior = "";
+            return;
+          }
+          resultado = num1 / num2;
+          break;
+        default:
+          return;
+      }
+
+      valorAtual = resultado.toString();
+      valorAnterior = "";
+      operacao = null;
+      atualizarTela();
+    }
+
+    function limpar() {
+      valorAtual = "";
+      valorAnterior = "";
+      operacao = null;
+      atualizarTela();
+    }
+
+    function trocarSinal() {
+      if (valorAtual === "") return;
+      valorAtual = (parseFloat(valorAtual) * -1).toString();
+      atualizarTela();
+    }
+
+    function apagarUltimo() {
+      valorAtual = valorAtual.slice(0, -1);
+      atualizarTela();
+    }
+
+    function porcentagem() {
+      if (valorAtual === "") return;
+      valorAtual = (parseFloat(valorAtual) / 100).toString();
+      atualizarTela();
+    }
+
+    function raizQuadrada() {
+      if (valorAtual === "") return;
+      if (parseFloat(valorAtual) < 0) {
+        tela.textContent = "Erro";
+        valorAtual = "";
+        return;
+      }
+      valorAtual = Math.sqrt(parseFloat(valorAtual)).toString();
+      atualizarTela();
+    }
+
+    function potencia() {
+      if (valorAtual === "") return;
+      valorAtual = Math.pow(parseFloat(valorAtual), 2).toString();
+      atualizarTela();
+    }
+
+    function fatorial() {
+      if (valorAtual === "") return;
+      const n = parseInt(valorAtual);
+      if (n < 0 || isNaN(n)) {
+        tela.textContent = "Erro";
+        valorAtual = "";
+        return;
+      }
+
+      let resultado = 1;
+      for (let i = 1; i <= n; i++) {
+        resultado *= i;
+      }
+      valorAtual = resultado.toString();
+      atualizarTela();
+    }
+  </script>
+
+</body>
+</html>

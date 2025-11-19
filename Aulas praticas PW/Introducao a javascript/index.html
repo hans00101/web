@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>A idade media</h1>
+    <P>A idade média foi um período da história que se estendeu aproximadamente do século V ao século XV. Este período é frequentemente dividido em três fases: a Alta Idade Média, a Baixa Idade Média e a Idade Média Tardia.</P>
+    <button id="meubotao">Esconder paragrafo</button>
+    <script>
+      $(document).ready(function(){
+      $('#meubotao').click(function(){
+        $("#meubotao").slideToggle();
+        $('p').hide();
+        $('p').show();
+      });
+    });
+
+    </script>
+    <script>
+$(document).ready(function(){
+  $('#meubotao').click(function(){
+    $('p').toggle();
+    if($(this).text() === "Esconder paragrafo") {
+      $(this).text("Mostrar paragrafo");
+    } else {
+      $(this).text("Esconder paragrafo");
+    }
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $('#meubotao').click(function(){
+    $('p').fadeOut(2); 
+  });
+});
+</script>
+</body>
+</html>

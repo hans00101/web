@@ -1,0 +1,28 @@
+boby{
+    background-color:yellow;
+    font-family: "Arial", sans-serif;
+}
+
+h1 {
+      background-color:blue;
+      height: 50px;
+      width: 109px;
+      border: top width 3px;
+    border-style: solid;
+    border-color: yellow;
+
+        border-bottom-width: 2px;
+          border-bottom-style: dashed;
+          border-bottom-color: black;
+}
+
+
+  ol {
+      background-color:blueviolet;
+         width: 50px;
+        border: 6px solid red;
+      width: 50px;
+         margin: 10px 10px 10px 40px; 
+    inline-size: 50px;
+  }
+

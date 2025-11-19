@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste jQuery Mínimo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1 id="titulo">Clique em mim!</h1>
+    <button id="botao">Mudar Cor</button>
+
+    <script>
+        $(document).ready(function() {
+         
+            $('#titulo').click(function() {
+                $(this).css('color', 'red');
+            });
+          
+            $('#botao').click(function() {
+                $('body').css('background-color', 'lightblue');
+            });
+        });
+    </script>
+</body>
+</html>
